@@ -1,25 +1,25 @@
 # Real-Time Financial Telemetry Platform (2026)
 
 ## 1. Overview
-[cite_start]This platform implements a **Kappa Architecture** to ingest, aggregate, and visualize high-velocity Bitcoin (BTC) trade data from the Binance Exchange[cite: 9, 10]. [cite_start]It utilizes **Event-Time semantics** to ensure financial accuracy (VWAP) despite potential network jitter[cite: 17, 18].
+This platform implements a **Kappa Architecture** to ingest, aggregate, and visualize high-velocity Bitcoin (BTC) trade data from the Binance Exchange. It utilizes **Event-Time semantics** to ensure financial accuracy (VWAP) despite potential network jitter.
 
 ## 2. Technology Stack
-* [cite_start]**OS:** Ubuntu 24.04 LTS (Noble Numbat) [cite: 13]
-* [cite_start]**Ingestion:** Apache Kafka 4.0 (KRaft Mode) [cite: 12, 175]
-* [cite_start]**Processing:** Apache Spark 4.0 (Structured Streaming) [cite: 12, 331]
-* [cite_start]**Visualization:** Streamlit (Fragment Architecture) [cite: 12, 428]
-* [cite_start]**Language:** Python 3.12+ [cite: 14]
+* **OS:** Ubuntu 24.04 LTS (Noble Numbat)
+* **Ingestion:** Apache Kafka 4.0 (KRaft Mode)
+* **Processing:** Apache Spark 4.0 (Structured Streaming)
+* **Visualization:** Streamlit (Fragment Architecture)
+* **Language:** Python 3.12+
 
 ## 3. Infrastructure Configuration (VirtualBox 7.1)
 To prevent I/O bottlenecks and "Black Screen" issues on Ubuntu 24.04, the following specifications are mandatory:
 
-1.  [cite_start]**Hardware Resources:** Allocate a minimum of **8GB RAM** and **4 vCPUs** to support the JVM stack[cite: 47, 50].
+1.  **Hardware Resources:** Allocate a minimum of **8GB RAM** and **4 vCPUs** to support the JVM stack.
 
-2.  [cite_start]**Display Settings:** Set Graphics Controller to **VMSVGA**, increase Video Memory to **128MB**, and strictly **disable 3D Acceleration** to avoid Wayland conflicts[cite: 65, 66, 67].
+2.  **Display Settings:** Set Graphics Controller to **VMSVGA**, increase Video Memory to **128MB**, and strictly **disable 3D Acceleration** to avoid Wayland conflicts.
 
-3.  [cite_start]**Storage Strategy:** Use a **50GB Fixed Size (Pre-allocated)** disk to eliminate hypervisor write jitter during Kafka ingestion[cite: 55, 57].
+3.  **Storage Strategy:** Use a **50GB Fixed Size (Pre-allocated)** disk to eliminate hypervisor write jitter during Kafka ingestion.
 
-4.  [cite_start]**CPU Optimization:** Set the Linux CPU governor to `performance` to minimize interrupt latency[cite: 113].
+4.  **CPU Optimization:** Set the Linux CPU governor to `performance` to minimize interrupt latency.
 
 ## 4. Deployment Instructions
 
